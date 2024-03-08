@@ -1,0 +1,36 @@
+datasource db {
+    provider = "postgresql"
+    url      = env("DATABASE_URL")
+}
+
+generator kysely {
+    // Kysely用の型定義を出力するgenerator
+    provider = "prisma-kysely"
+    // 出力先ディレクトリ
+    output    = "../src/lib/server/database"
+    // ファイル名
+    fileName  = "types.ts"
+    // Kyselyの、クエリ時にcamelCaseで扱えるオプションを有効化
+    camelCase = true
+}
+
+model AppUser {
+    id   String  @id
+    name String
+    /// @kyselyType('admin' | 'member')
+    role String
+
+    Session Session[]
+
+    @@map("app_user")
+}
+
+model Session {
+    id          String   @id
+    userId      String   @map("user_id")
+    expiresAt   DateTime @map("expires_at") @db.Timestamptz(3)
+    appUser     AppUser  @relation(references: [id], fields: [userId], onDelete: Cascade)
+    loginMethod String?  @map("login_method")
+
+    @@map("session")
+}
