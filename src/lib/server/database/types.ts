@@ -12,6 +12,12 @@ export type AppUser = {
      */
     role: 'admin' | 'member';
 };
+export type Key = {
+    id: Generated<string>;
+    userId: string;
+    provider: string;
+    sub: string;
+};
 export type Session = {
     id: string;
     userId: string;
@@ -20,5 +26,6 @@ export type Session = {
 };
 export type DB = {
     appUser: AppUser;
+    key: Key;
     session: Session;
 };

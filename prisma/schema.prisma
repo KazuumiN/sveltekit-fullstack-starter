@@ -5,7 +5,7 @@ datasource db {
 
 generator kysely {
     // Kysely用の型定義を出力するgenerator
-    provider = "prisma-kysely"
+    provider  = "prisma-kysely"
     // 出力先ディレクトリ
     output    = "../src/lib/server/database"
     // ファイル名
@@ -15,14 +15,27 @@ generator kysely {
 }
 
 model AppUser {
-    id   String  @id
+    id   String @id
     name String
     /// @kyselyType('admin' | 'member')
     role String
 
     Session Session[]
+    Key     Key[]
 
     @@map("app_user")
+}
+
+model Key {
+    id String @id @default(dbgenerated("gen_random_uuid()")) @db.Uuid
+
+    userId String  @map("user_id")
+    user   AppUser @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+    provider String
+    sub      String
+
+    @@map("key")
 }
 
 model Session {
