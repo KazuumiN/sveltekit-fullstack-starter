@@ -7,8 +7,9 @@ SvelteKitアプリケーションスターターテンプレート
 - [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss): CSSフレームワーク
 - [shadcn-svelte](https://github.com/huntabyte/shadcn-svelte): UIコンポーネント
 - [MeltUI](https://github.com/melt-ui/melt-ui): コンポーネントビルダ
-- [Superforms](https://github.com/ciscoheat/sveltekit-superforms): フォームバリデーション
+- [Superforms](https://github.com/ciscoheat/sveltekit-superforms): フォームライブラリ
 - [Formsnap](https://github.com/svecosystem/formsnap): Superformsを簡単に
+- [Valibot](https://github.com/fabian-hiller/valibot): バリデーションライブラリ
 - [Lucia](https://github.com/lucia-auth/lucia): 認証・セッション管理
 - [Arctic](https://github.com/pilcrowOnPaper/arctic): 複数のOAuth 2.0プロバイダに対応
 - [oslo](https://github.com/pilcrowOnPaper/oslo):　認証ユーティリティ

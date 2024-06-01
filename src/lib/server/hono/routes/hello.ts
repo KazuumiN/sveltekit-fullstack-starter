@@ -1,6 +1,6 @@
 import { Hono } from 'hono';
-import { zValidator } from '@hono/zod-validator';
-import { z } from 'zod';
+import { vValidator } from '@hono/valibot-validator';
+import { object, string } from 'valibot';
 import type { Bindings } from '../types';
 
 const app = new Hono<{ Bindings: Bindings }>();
@@ -17,10 +17,10 @@ export const helloRoute = app
     )
     .post(
         '/',
-        zValidator(
+        vValidator(
             'json',
-            z.object({
-                name: z.string()
+            object({
+                name: string()
             })
         ),
 
