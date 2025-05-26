@@ -1,9 +1,6 @@
 <script lang="ts">
-	import '../app.pcss';
-	import { MetaTags } from 'svelte-meta-tags';
-	import { Toaster } from "$lib/components/ui/sonner";
+	import '../app.css';
+	let { children } = $props();
 </script>
 
-<MetaTags title="SvelteKit App" />
-<Toaster />
-<slot />
+{@render children()}
