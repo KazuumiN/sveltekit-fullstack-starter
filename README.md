@@ -3,6 +3,7 @@
 SvelteKitアプリケーションスターターテンプレート
 
 ## 使用ライブラリ
+
 - [SvelteKit](https://github.com/sveltejs/kit): Webフレームワーク
 - [Tailwind CSS](https://github.com/tailwindlabs/tailwindcss): CSSフレームワーク
 - [shadcn-svelte](https://github.com/huntabyte/shadcn-svelte): UIコンポーネント
@@ -20,7 +21,6 @@ SvelteKitアプリケーションスターターテンプレート
 ## 構成
 
 データベース: PostgreSQL
-
 
 ```bash
 pnpm i

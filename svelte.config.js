@@ -12,7 +12,7 @@ const config = {
 		alias: {
 			$components: './src/lib/components',
 			$ui: './src/lib/components/ui',
-			$hooks: './src/lib/hooks',
+			$hooks: './src/lib/hooks'
 		}
 	}
 };
